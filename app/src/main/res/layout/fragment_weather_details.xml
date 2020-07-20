@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="city"
+            type="com.saket.weather_app_basic.model.City" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@{city.title}"
+            android:gravity="center"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtWeatherTitle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text='@{"City weather: " + city.weatherInfo.weather_name}'
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <TextView
+            android:id="@+id/txtMaxTemp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text='@{"Max Temp: " + city.weatherInfo.max_temp}'
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtWeatherTitle" />
+
+        <TextView
+            android:id="@+id/txtMinTemp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text='@{"Min Temp: " + city.weatherInfo.min_temp}'
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMaxTemp" />
+
+        <TextView
+            android:id="@+id/txtHumidity"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text='@{"Humidity: " + city.weatherInfo.humidity}'
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMinTemp" />
+
+        <TextView
+            android:id="@+id/txtWindSpeed"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text='@{"Wind speed: " + city.weatherInfo.wind_speed}'
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHumidity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
